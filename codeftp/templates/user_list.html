@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>用户名</th>
+                <th>昵称</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for item in data_list%}
+            <tr>
+                <td>{{item.id}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.nickname}}</td>
+                <td><a href="/detail/{{item.id}}">查看记录</a> </td>
+            </tr>
+            {%endfor%}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
